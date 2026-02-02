@@ -1,5 +1,5 @@
 export const SITE = {
-  website: website: "https://stephencpowell-hue.github.io/salusys-platform/",
+  website:"https://stephencpowell-hue.github.io/salusys-platform/",
   author: "SALuSYS",
   profile: "https://satnaing.dev/",
   desc: "Systems for Safer Places",
