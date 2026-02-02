@@ -24,13 +24,14 @@ import { SOCIALS } from "@/constants";
       </p>
 
       <div class="mt-6 flex flex-wrap items-center gap-4">
-        <LinkButton href="about">Explore the Platform</LinkButton>
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="about"
-        >
-          Why Systems Matter →
-        </LinkButton>
+<LinkButton href={`${import.meta.env.BASE_URL}about`}>Explore the Platform</LinkButton>
+
+<LinkButton
+  class="underline decoration-dashed underline-offset-4 hover:text-accent"
+  href={`${import.meta.env.BASE_URL}about`}
+>
+  Why Systems Matter →
+</LinkButton>
       </div>
 
       {
