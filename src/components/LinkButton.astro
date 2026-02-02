@@ -19,3 +19,35 @@ const Button = disabled ? "span" : "a";
 >
   <slot />
 </Button>
+---
+const { href = "#", class: className = "", ...rest } = Astro.props;
+
+const isExternal =
+  href.startsWith("http://") ||
+  href.startsWith("https://") ||
+  href.startsWith("mailto:") ||
+  href.startsWith("tel:") ||
+  href.startsWith("#");
+
+// GitHub Pages project sites use a base path (e.g., /salusys-platform/)
+const base = import.meta.env.BASE_URL || "/";
+
+// Normalize internal hrefs so they work under the base path
+let finalHref = href;
+
+if (!isExternal) {
+  // remove leading slash so we can safely join with base
+  const cleaned = href.startsWith("/") ? href.slice(1) : href;
+
+  // prevent double-prefix if someone already included the repo path
+  if (cleaned.startsWith("salusys-platform/")) {
+    finalHref = `/${cleaned}`;
+  } else {
+    finalHref = `${base}${cleaned}`;
+  }
+}
+---
+
+<a href={finalHref} class={className} {...rest}>
+  <slot />
+</a>
