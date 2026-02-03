@@ -1,7 +1,9 @@
 ---
 layout: ../layouts/AboutLayout.astro
+
 title: "About The SALuSYS Platform"
 ---
+
 Salusys is a systems-based platform dedicated to improving safety across the spaces where life happens—by elevating the products, frameworks, and workflows that shape real environments.
 
 ## Salus: health as a system
