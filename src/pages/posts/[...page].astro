@@ -8,6 +8,8 @@ import Pagination from "@/components/Pagination.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -18,7 +20,7 @@ const { page } = Astro.props;
 ---
 
 <Layout title={`Products | ${SITE.title}`}>
-  <Headers />
+  <Header />
   <Main pageTitle="Products" pageDesc="Current Available Products">
     <ul>
       {page.data.map(data => <Card {...data} />)}
