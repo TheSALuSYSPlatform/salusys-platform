@@ -78,21 +78,24 @@ const isActive = (path: string) => {
           "sm:mt-0 sm:flex sm:w-auto sm:gap-x-5 sm:gap-y-0",
         ]}
       >
-        <li class="col-span-2">
-          <a href={u("posts/")} class:list={{ "active-nav": isActive("/posts") }}>
-            Posts
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a href={u("tags/")} class:list={{ "active-nav": isActive("/tags") }}>
-            Tags
-          </a>
-        </li>
-        <li class="col-span-2">
-          <a href={u("about/")} class:list={{ "active-nav": isActive("/about") }}>
-            About
-          </a>
-        </li>
+       <li class="col-span-2">
+        <a href={u("about/")} class:list={{ "active-nav": isActive("/about") }}>
+          About
+        </a>
+    </li>
+
+      <li class="col-span-2">
+        <a href={u("posts/")} class:list={{ "active-nav": isActive("/posts") }}>
+         Products
+      </a>
+    </li>
+
+      <li class="col-span-2">
+        <a href={u("tags/")} class:list={{ "active-nav": isActive("/tags") }}>
+          Research
+        </a>
+    </li>
+
 {
   SITE.showArchives && (
     <li class="col-span-2">
