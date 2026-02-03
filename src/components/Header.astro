@@ -7,8 +7,6 @@ import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
-import Logo from "@public/images/salusys-wordmark-only.webp"; 
-import { Image } from "astro:assets";
 
 // normalize BASE_URL to always end with "/"
 const base = import.meta.env.BASE_URL.endsWith("/")
@@ -49,14 +47,15 @@ const isActive = (path: string) => {
       "flex items-baseline justify-between sm:items-center",
     ]}
   >
-<a href={base} class="absolute sm:static sm:my-auto flex items-center" aria-label="Salusys Platform home">
-  <Image
-    src={Logo}
-    alt="Salusys Platform"
-    class="h-7 sm:h-8 w-auto"
-    loading="eager"
-  />
-</a>
+  <a href={base} class="flex items-center">
+    <img
+      src={u("images/salusys-wordmark-only.webp")}
+      alt="Salusys Platform"
+      class="h-8 w-auto"
+      loading="eager"
+      decoding="async"
+    />
+  </a>
     <nav
       id="nav-menu"
       class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"
