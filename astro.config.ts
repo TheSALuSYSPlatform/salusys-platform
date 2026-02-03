@@ -7,11 +7,15 @@ const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
   site: isGitHubPages
-    ? "https://stephenpowell.github.io"
+    ? "https://<TheSALuSYSPlatform>.github.io"
     : "https://thesalusysplatform.com",
   base: isGitHubPages ? "/salusys-platform" : "/",
-  // ...
-});
+
+  integrations: [
+    sitemap({
+      filter: (page) => SITE.showArchives || !page.endsWith("/archives"),
+    }),
+  ],
 
   vite: {
     // @ts-ignore - Vite plugin type mismatch in CI
