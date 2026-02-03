@@ -7,16 +7,12 @@ const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
   site: isGitHubPages
-    ? "https://<username>.github.io"
+    ? "https://stephenpowell.github.io"
     : "https://thesalusysplatform.com",
-
   base: isGitHubPages ? "/salusys-platform" : "/",
+  // ...
+});
 
-  integrations: [
-    sitemap({
-      filter: (page) => SITE.showArchives || !page.endsWith("/archives"),
-    }),
-  ],
   vite: {
     // @ts-ignore - Vite plugin type mismatch in CI
     plugins: [tailwindcss()],
