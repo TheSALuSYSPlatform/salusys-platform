@@ -7,11 +7,11 @@ const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
   site: isGitHubPages
-    ? "https://stephenpowell.github.io"   // <-- replace with exact owner
+    ? "https://stephenpowell.github.io" // <-- replace with your actual Pages owner
     : "https://thesalusysplatform.com",
+
   base: isGitHubPages ? "/salusys-platform" : "/",
-  // ...
-});
+
   integrations: [
     sitemap({
       filter: (page) => SITE.showArchives || !page.endsWith("/archives"),
@@ -26,4 +26,3 @@ export default defineConfig({
     },
   },
 });
-
